@@ -32,7 +32,32 @@ void display_deep(Deep s) {
     cout << s.get_data_value() << endl;
 }
 
+
+// x is an l-value
+//l_ref is an l-reference
+int x {100}; 
+int &l_ref = x;
+// l_ref = 10;
+
+int y {10};
+void func(int &&num);
+
+int global = 100;
+int& setGlobal() 
+{
+    return global;
+}
+
+
 int main() {
     Deep object1 {100};
     display_deep(object1);
+    func(100);
+
+    int y {10};
+    int& y_ref = y;
+    y_ref++;
+    // y ref is 11
+
+    
 }
